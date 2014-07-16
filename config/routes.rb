@@ -1,4 +1,5 @@
 Shareup::Application.routes.draw do
+  root to: 'welcome#index'
 
   namespace :api do
     resources :shares
@@ -8,4 +9,6 @@ Shareup::Application.routes.draw do
           :controllers => {
             :omniauth_callbacks => "users/omniauth_callbacks"
           }
+
+  get '/dashboard', to: 'welcome#dashboard'
 end
